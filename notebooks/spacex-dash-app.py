@@ -20,11 +20,12 @@ app = dash.Dash(__name__)
 
 # -----------------------
 # Layout
+# TASK 1: Add a Launch Site Drop-down Input Component 
 # -----------------------
 app.layout = html.Div([
 
     html.H1("SpaceX Launch Dashboard"),
-
+ #  TASK 1 — Launch Site Drop-down
     # Dropdown
     dcc.Dropdown(
         id='site-dropdown',
@@ -53,6 +54,10 @@ app.layout = html.Div([
 ])
 
 # -----------------------
+# TASK 2: Add a callback function to render success-pie-chart based on selected site dropdown 
+# TASK 2 — Callback for success pie chart
+
+# Requirement: Pie chart changes based on dropdown
 # Callback 1 (Pie chart)
 # -----------------------
 @app.callback(
@@ -81,6 +86,10 @@ def get_pie_chart(entered_site):
 
 
 # -----------------------
+#TASK 3: Add a Range Slider to Select Payload 
+# TASK 3 — Range Slider
+
+#Requirement: Payload slider
 # Callback 2 (Scatter)
 # -----------------------
 @app.callback(
@@ -114,6 +123,9 @@ def update_scatter(selected_site, payload_range):
 
 
 # -----------------------
+# TASK 4 — Scatter callback
+#TASK 4: Add a callback function to render the success-payload-scatter-chart scatter plot
+# Requirement: Scatter updates with site + payload
 # Run
 # -----------------------
 if __name__ == '__main__':
